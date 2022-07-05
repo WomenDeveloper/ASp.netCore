@@ -1,0 +1,44 @@
+﻿<h3>Controller => View Veri Aktarımı</h3>
+
+@ViewData["Message"] <br />
+@ViewBag.Mesaj <br />
+@ViewBag.Veri<br /><br />
+
+@foreach(string item in (List<string>)ViewData["cities"])
+{
+    @item
+}
+<br />
+
+@foreach(string item in ViewBag.Sehirler)
+{
+    @item
+}
+<br /><br />
+
+@ViewData["Product"]
+@ViewBag.Urun
+<br />
+@{
+    Urun urun = (Urun)ViewData["Product"];
+    @urun.UrunID @urun.UrunAdi @urun.Fiyat
+}
+<br />
+@ViewBag.Urun.UrunID @ViewBag.Urun.UrunAdi @ViewBag.Urun.Fiyat 
+
+@*Model Kolleksiyon *@
+
+@foreach(Urun item in (List<Urun>)ViewData["products"])
+{
+    @item.UrunID @item.UrunAdi @item.Fiyat
+}
+
+<br />
+@foreach(Urun item in ViewBag.Urunler)
+{
+    @item.UrunID @item.UrunAdi @item.Fiyat
+}
+
+<br /><br /><br />
+<h5>tempdata</h5>
+@TempData["temp"]

@@ -1,0 +1,15 @@
+﻿@model IEnumerable<WebAppDB.Models.Film>
+
+<a asp-action="Ekle" asp-controller="Film">Film Ekle</a>
+<br />
+<table border="1">
+    @foreach(Film film in Model)
+    {
+        <tr>
+            <td>@film.FilmID</td>
+            <td>@film.FilmAdi</td>
+            <td>@film.Sure</td>
+            <td>@film.KatID</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,22 @@
+﻿<h1>Merhaba</h1>
+
+@*Razor*@
+
+@{
+    int sayi = 12;
+
+}
+
+ <b>@sayi</b>
+ <br /><br />
+ @*HTML*@
+ <a href="~/VeriAktar/Index">Veri Aktar</a>
+ <br />
+ @*HTML HELPER*@
+ @Html.ActionLink("Veri Aktar","Index","VeriAktar")
+ <br />
+ @*Core:Tag HELPER*@
+
+ <a asp-action="Index" asp-controller="VeriAktar">Veri Aktar</a>
+
+ <h2>Güncelleme</h2>

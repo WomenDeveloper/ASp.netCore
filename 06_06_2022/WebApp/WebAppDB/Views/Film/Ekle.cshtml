@@ -1,0 +1,18 @@
+﻿@model WebAppDB.Models.Film
+
+<form asp-action="Ekle" asp-controller="Film" method=post>
+  Film Adı: <input asp-for=FilmAdi /><br />
+  Sure:  <input asp-for=Sure /><br />
+ @* Kategori:  <input asp-for=KatID /><br />*@
+
+    Kategori:  <select asp-for=@Model.KatID  asp-items=@ViewBag.Kategoriler > </select><br />
+    <br />
+    <input type ="submit"  value="Kaydet"/>
+</form>
+
+@*<ul>
+    @foreach(SelectListItem item in ViewBag.Kategoriler)
+    { 
+       @item.Text
+    }
+</ul>*@

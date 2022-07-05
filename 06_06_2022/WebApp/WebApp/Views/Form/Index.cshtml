@@ -1,0 +1,43 @@
+﻿@model WebApp.Models.Urun
+<h2>View => Controller Veri Aktarımı</h2>
+
+@*id:Javascript ile degere ulasmak icin*@
+@*name:Server tarafında degere ulasmak icin*@
+
+@*FORM => method=GET ise degerler Querystring uzerinden gonderilir...*@
+<h4>GET</h4>
+<form action="~/Form/Yakala" method="Get">
+    <input type="text" id="ID" name="ID" />
+    <input type="text" id="ad" name="ad" />
+    <input type="text" id="fiyat" name="fiyat" />
+    <input type="text" id="Renk" name="Renk" />
+    <input type="submit" value="Gonder" />
+</form>
+
+<h4>POST</h4>
+<form action="~/Form/Yakala4" method="POST">
+    <input type="text" id="ID" name="ID" />
+    <input type="text" id="ad" name="ad" />
+    <input type="text" id="fiyat" name="fiyat" />
+    <input type="text" id="Renk" name="Renk" />
+    <input type="submit" value="Gonder" />
+</form>
+<br />
+@using(Html.BeginForm("Yakala5","Form", FormMethod.Post )){
+    @Html.TextBoxFor(m=>m.UrunID)
+    @Html.TextBoxFor(m=>m.UrunAdi)
+    @Html.TextBoxFor(m=>m.Fiyat)
+    @Html.TextBoxFor(m=>m.Renk)
+    <input type="submit" value="Gonder">
+
+}
+
+<br />
+@*CORE ile Geldi*@
+<form asp-action="Yakala5" asp-controller="Form" method="post" >
+    <input  asp-for=UrunID/>
+    <input  asp-for=UrunAdi/>
+    <input  asp-for=Fiyat/>
+    <input  asp-for=Renk/>
+    <input type="submit" value="Gonder" />
+</form>
